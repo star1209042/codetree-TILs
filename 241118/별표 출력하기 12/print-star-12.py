@@ -1,11 +1,19 @@
-n= int(input())
+n = int(input())
 
 for i in range(n):
-    for j in range(n):
-        if i == 0:  # 첫 번째 행
-            print("* "* n)
-        elif j == i and (j % 2 == 0 and i == 1):  # 조건에 맞는 열 출력
-            print("* ", end=" ")
-        else:
-            print(" ", end=" ")
-    print()  # 줄 바꿈
+    if i == 0:  # 첫 줄
+        print("* " * n)
+    elif i % 2 == 1:  # 홀수 번째 줄
+        for j in range(n):
+            if j == i // 2 or j == n - i // 2 - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+    else:  # 짝수 번째 줄 (빈 공간 줄)
+        for j in range(n):
+            if j == n - i // 2 - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
