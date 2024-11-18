@@ -4,4 +4,4 @@ for i in range(n):
     if i == 0 or i == n:
         print("* "*n)
     else:
-        print("* "* i + "  " *(n-i)+ "*")
+        print("* "* i + "  " *(n-i)+ "* ")
